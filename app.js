@@ -19,5 +19,9 @@ angular.module('fiskkitTestProject').run(function($rootScope) {
             this.$apply(fn);
         }
     };
+	$rootScope.status = false;
+    $rootScope.toggle = function() {
+        $rootScope.status = !$rootScope.status;
+    };
 
 });
