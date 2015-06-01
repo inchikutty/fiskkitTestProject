@@ -34,6 +34,17 @@
     <div id="content" class="container">
       <div class="row">
         <div ui-view>
+			<div class="header">
+				<form name="web" class="form-inline" role="form">
+					<div class="form-group">
+						<input name="src" type="url"  class="form-control" ng-model= "src" placeholder="Enter the URL" size = "80%" ng-model-options="{ debounce: 500 }"/>
+						<input id="urlBtn" class="btn-primary" type="button" value="load web content" ng-click ="toggle()" ng-show="web.src.$valid" />
+					</div>
+				</form>
+				<div class="msg" role="alert">
+					<span class="error" ng-show="web.src.$error.url">Not valid url!</span>
+				</div>
+			</div>
         </div>
       </div>
     </div>
