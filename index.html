@@ -29,6 +29,7 @@
   <!-- Main App JS -->
   <script src="app.js"></script>
   <script src="filter/trustAsResourceUrl.js"></script>
+  <script src="directive/iframeHeight.js"></script>
   <!-- Add New Component JS Above -->
 
   <div>
@@ -46,8 +47,8 @@
 					<span class="error" ng-show="web.src.$error.url">Not valid url!</span>
 				</div>
 			</div>
-			<div class="container-fluid">
-				<iframe class="well" id="ifid" width='100%' height="500px" ng-src= "{{ src | trustAsResourceUrl }}" ng-show="status" ></iframe>
+			<div>
+				<iframe iframe-height class="well" id="ifid" ng-src= "{{ src | trustAsResourceUrl }}" ng-show="status" ></iframe>
 			</div>
         </div>
       </div>

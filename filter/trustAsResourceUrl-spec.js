@@ -2,11 +2,11 @@ describe('trustAsResourceUrl', function() {
 
 	beforeEach(module('fiskkitTestProject'));
 
-	it('should ...', inject(function($filter) {
+	it('should be able to filter the input URL using $sce service', inject(function( $filter, $sce ) {
 
-        var filter = $filter('trustAsResourceUrl');
+       var filter = $filter('trustAsResourceUrl');
 
-		expect(filter('input')).toEqual('output');
+		expect(filter('')).toBe($sce.trustAsResourceUrl(''));
 
 	}));
 
