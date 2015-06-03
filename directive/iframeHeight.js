@@ -3,10 +3,9 @@ angular.module('fiskkitTestProject').directive('iframeHeight', function() {
 		restrict: 'A',
 		link: function(scope, element, attrs, fn) {
 			var ifr = element[0];
-			element.on('load', function(){
-               var iFrameHeight = ( parent.window.innerHeight|parent.document.body.clientHeight) + 'px';
+			element.on('click load', function(){
+               var iFrameHeight = ( parent.window.innerHeight| parent.document.body.clientHeight | 300 ) + 'px';
                ifr.style.height = iFrameHeight;
-			   //console.log( element.src );
 			});
 		}
 	};

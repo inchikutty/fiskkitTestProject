@@ -8,22 +8,15 @@ describe('iframeHeight', function() {
     scope = $rootScope.$new();
     compile = $compile;
   }));
+  
+   it('Should set iframe height to its parents height', function() {
+		var elm = angular.element( '<iframe iframe-height src="foo " style="height: 100px"></iframe>' );
+		var htm = compile( elm )(scope);
+		elm.trigger('click');
+		
+		scope.$digest();
 
-  it('Should set iframe height to its parents height', function() {
+		expect( elm[0].style.height ).toBe('300px');
+	});
 
-    /* 
-    To test your directive, you need to create some html that would use your directive,
-    send that through compile() then compare the results.
-
-    var element = compile('<div mydirective name="name">hi</div>')(scope);
-    expect(element.text()).toBe('hello, world');
-	*/
-
-	var element = compile('<iframe iframe-height src=" " style=""></iframe>')(scope);
-	
-	scope.$digest();
-	
-	expect( element.html()).toContain('');
-
-  });
 });

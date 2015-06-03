@@ -4,9 +4,9 @@ describe('trustAsResourceUrl', function() {
 
 	it('should be able to filter the input URL using $sce service', inject(function( $filter, $sce ) {
 
-       var filter = $filter('trustAsResourceUrl');
+       var filter = $filter('trustAsResourceUrl')('http://fiskkit.com');
 
-		expect(filter('')).toBe($sce.trustAsResourceUrl(''));
+		expect( filter.$$unwrapTrustedValue() ).toBe('http://fiskkit.com');
 
 	}));
 
