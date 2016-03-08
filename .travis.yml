@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 0.12
+install:
+  - npm install
+  - bower install
+#script:
+# - grunt serve
+#deploy:
+# - skip_cleanup: true
+# whitelist
+branches:
+  only:
+    - master
